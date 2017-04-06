@@ -1,12 +1,19 @@
-*.class
+.gradle/
+.idea/
+out/
+gradle/
+gradlew
+gradlew.bat
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+#Floobits
+.floo
+.flooignore
 
-# Package Files #
-*.jar
-*.war
-*.ear
+#Java Bytecode
+.class
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+#Jars
+.jar
+
+#Build
+build
