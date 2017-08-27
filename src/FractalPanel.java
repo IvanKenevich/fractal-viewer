@@ -13,7 +13,7 @@ class FractalPanel extends JPanel implements MouseMotionListener, MouseWheelList
 
     boolean firstTimeDragging;
 
-    Point mousePos, formerMousePos,
+    private Point mousePos, formerMousePos,
             pT1, pT2, pT3,
             pS1, pS2, pS3, pS4,
             pK1, pK2,
@@ -87,6 +87,7 @@ class FractalPanel extends JPanel implements MouseMotionListener, MouseWheelList
             pT3.x -= formerMousePos.x - e.getX();
             pT3.y -= formerMousePos.y - e.getY();
         }
+
         formerMousePos.x = e.getX();
         formerMousePos.y = e.getY();
 
@@ -169,13 +170,13 @@ class FractalPanel extends JPanel implements MouseMotionListener, MouseWheelList
         }
         g.setColor(Color.black);
         g.drawString("Order: " + complexity, this.getWidth() - 80, 30);
-        ///////////////////////////////NAME TAG/////////////////////////////////
-        g.setColor(Color.black);                                              //
-        g.fillRect(this.getWidth() - 82, this.getHeight() - 40, 82, 40);             //
-        g.setColor(Color.green);                                              //
-        g.drawString("Ivan Kenevich", this.getWidth() - 80, this.getHeight() - 27); //
-        g.drawString("Chris Medlin", this.getWidth() - 75, this.getHeight() - 7);   //
-        ////////////////////////////////////////////////////////////////////////
+
+        // name tag
+        g.setColor(Color.black);
+        g.fillRect(this.getWidth() - 82, this.getHeight() - 40, 82, 40);
+        g.setColor(Color.green);
+        g.drawString("Ivan Kenevich", this.getWidth() - 80, this.getHeight() - 27);
+        g.drawString("Chris Medlin", this.getWidth() - 75, this.getHeight() - 7);
     }
 }
             

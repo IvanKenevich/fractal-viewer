@@ -14,16 +14,16 @@ public class Fractals {
     private static int x = 0, y = 1;
 
     private static void drawTriangle(Point p0, Point p1, Point p2, Graphics g) {
-        int[] xs = new int[]{(int) p0.x, (int) p1.x, (int) p2.x};
-        int[] ys = new int[]{(int) p0.y, (int) p1.y, (int) p2.y};
+        int[] xs = new int[]{p0.x, p1.x, p2.x};
+        int[] ys = new int[]{p0.y, p1.y, p2.y};
         g.setColor(Color.black);
         g.fillPolygon(xs, ys, xs.length);
     }
 
     public static void fillSquare(Point point, int side, Graphics g) {
         g.setColor(Color.white);
-        if (!((point.x + side) > 1000 || (point.y + side) > 1000 || (point.x + side) < 0 || (point.y + side) < 0))
-            g.fillRect(point.x + side, point.y + side, side, side);
+
+        g.fillRect(point.x + side, point.y + side, side, side);
     }
 
     public static void drawCircle(Point p0, double radius, Graphics g, int limit) {
@@ -59,22 +59,22 @@ public class Fractals {
 
             fillSquare(point, length / 3, g);
 
-            if (!((p1.x + length / 3) > 1000 || (p1.y + length / 3) > 1000 || (p1.x + length / 3) < 0 || (p1.y + length / 3) < 0))
-                sierpinskiSquare(p1, length / 3, limit - 1, g);
-            if (!((p2.x + length / 3) > 1000 || (p2.y + length / 3) > 1000 || (p2.x + length / 3) < 0 || (p2.y + length / 3) < 0))
-                sierpinskiSquare(p2, length / 3, limit - 1, g);
-            if (!((p3.x + length / 3) > 1000 || (p3.y + length / 3) > 1000 || (p3.x + length / 3) < 0 || (p3.y + length / 3) < 0))
-                sierpinskiSquare(p3, length / 3, limit - 1, g);
-            if (!((p4.x + length / 3) > 1000 || (p4.y + length / 3) > 1000 || (p4.x + length / 3) < 0 || (p4.y + length / 3) < 0))
-                sierpinskiSquare(p4, length / 3, limit - 1, g);
-            if (!((p5.x + length / 3) > 1000 || (p5.y + length / 3) > 1000 || (p5.x + length / 3) < 0 || (p5.y + length / 3) < 0))
-                sierpinskiSquare(p5, length / 3, limit - 1, g);
-            if (!((p6.x + length / 3) > 1000 || (p6.y + length / 3) > 1000 || (p6.x + length / 3) < 0 || (p6.y + length / 3) < 0))
-                sierpinskiSquare(p6, length / 3, limit - 1, g);
-            if (!((p7.x + length / 3) > 1000 || (p7.y + length / 3) > 1000 || (p7.x + length / 3) < 0 || (p7.y + length / 3) < 0))
-                sierpinskiSquare(p7, length / 3, limit - 1, g);
-            if (!((p8.x + length / 3) > 1000 || (p8.y + length / 3) > 1000 || (p8.x + length / 3) < 0 || (p8.y + length / 3) < 0))
-                sierpinskiSquare(p8, length / 3, limit - 1, g);
+
+            sierpinskiSquare(p1, length / 3, limit - 1, g);
+
+            sierpinskiSquare(p2, length / 3, limit - 1, g);
+
+            sierpinskiSquare(p3, length / 3, limit - 1, g);
+
+            sierpinskiSquare(p4, length / 3, limit - 1, g);
+
+            sierpinskiSquare(p5, length / 3, limit - 1, g);
+
+            sierpinskiSquare(p6, length / 3, limit - 1, g);
+
+            sierpinskiSquare(p7, length / 3, limit - 1, g);
+
+            sierpinskiSquare(p8, length / 3, limit - 1, g);
 
         }
     }
@@ -128,7 +128,5 @@ public class Fractals {
 
 
         }
-        /*else
-        {}*/
     }
 }
